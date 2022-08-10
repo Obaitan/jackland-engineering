@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% block layout %}
+<div id="home-hero">
+  <div class="container h-100">
+    <div class="row align-items-center gx-5 h-100">
+      <div class="col-xl-6">
+        <p class="big-cap mb-2">
+          A WORLD-LEADING DESIGN, ENGINEERING AND PROJECT-MANAGEMENT CONSULTANCY
+        </p>
+      </div>
+      <div class="col-xl-6">
+        <img src="" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="about-s">
+  <div class="container">
+    <div class="row gx-5 align-items-center p-more">
+      <div class="col-xl-6">
+        <img
+          src="{{ url_for('static', filename='images/about.png') }}"
+          class="w-100"
+          alt=""
+        />
+      </div>
+      <div class="col-xl-6">
+        <p class="small-cap mb-1">Who we are</p>
+        <p class="big-cap mb-2">
+          A WORLD-LEADING DESIGN, ENGINEERING AND PROJECT-MANAGEMENT CONSULTANCY
+        </p>
+        <p class="text1">
+          Our lived environment is facing rapid change; to face these
+          challenges, we are radically transforming the way infrastructure is
+          designed, delivered and operated. Our aim is to help create a world
+          that is diverse, sustainable, full of thriving communities and working
+          better for all.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% include 'main/_what.html' %} {% include 'main/_recent.html' %} {% include
+'main/_partners.html' %} {% endblock %}

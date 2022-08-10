@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>Jackland Engineering | {{ title }}</title>
+
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/favicon.png') }}"
+      type="image/x-icon"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Lora:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
+      rel="stylesheet"
+    />
+
+    {% block style %}{% endblock %}
+
+    <!-- Custom styles -->
+    <link
+      href="{{ url_for('static', filename='css/style.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="top-elements">
+      <div class="container">
+        <div class="col-xl-7 ms-auto">
+          <div class="d-flex justify-content-end align-items-center">
+            <div class="top-contact">
+              <span class="material-icons md-15"> phone_iphone </span>
+              <span class="top-detail">+234 708 661 7134</span>
+            </div>
+
+            <div class="top-contact">
+              <span class="material-icons md-15"> email </span>
+              <span class="top-detail">
+                <script>
+                  var first = "info";
+                  var last = "jacklandengineering.com";
+                  document.write(
+                    '<a href="mailto:' +
+                      first +
+                      "@" +
+                      last +
+                      '" class="top-title" target="_blank">' +
+                      first +
+                      "@" +
+                      last +
+                      "<\/a>"
+                  );
+                </script>
+                <noscript>
+                  Please enable javascript or use the contact form to send a
+                  message.
+                </noscript>
+              </span>
+            </div>
+
+            <div class="top-contact the-end">
+              <a href="#!" class="social-icon" target="_blank">
+                <i class="fab fa-facebook-f top-fab"></i>
+              </a>
+              <a
+                href="#"
+                class="social-icon"
+                target="_blank"
+              >
+                <i class="fab fa-twitter top-fab"></i>
+              </a>
+              <a href="#!" class="social-icon" target="_blank">
+                <i class="fab fa-instagram top-fab"></i>
+              </a>
+              <a
+                href="#"
+                class="social-icon"
+                target="_blank"
+              >
+                <i class="fab fa-linkedin-in top-fab"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar py-md-3 navbar-expand-xl" id="navbar">
+      <div class="container">
+        <a href="{{ url_for('main.index') }}" class="navbar-brand">
+          <!-- <img src="images/logo.png" class="logo" alt="Company logo" /> -->
+          <span class="temp">Info.ng</span>
+        </a>
+
+        <div
+          class="group navbar-toggler"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          onclick="myFunction(this)"
+        >
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav my-3 my-lg-0" id="menu-wrap">
+            <li class="nav-item nav-spacer">
+              <a
+                class="nav-link {{'selected' if request.path == '/about-us' }}"
+                href="{{ url_for('main.about') }}"
+                >About Us</a
+              >
+            </li>
+            <li class="nav-item nav-spacer">
+              <a
+                class="nav-link {{'selected' if request.path == '/services/construction' }}"
+                href="{{ url_for('main.construction') }}"
+                >Construction</a
+              >
+            </li>
+            <li class="nav-item nav-spacer">
+              <a
+                class="nav-link {{'selected' if request.path == '/trivia' }}"
+                href="#!"
+                >Real Estate</a
+              >
+            </li>
+            <li class="nav-item nav-spacer">
+              <a
+                class="nav-link {{'selected' if request.path == '/trivia' }}"
+                href="#!"
+                >Engineering Materials</a
+              >
+            </li>
+            <li class="nav-item nav-spacer">
+              <a
+                class="nav-link {{'selected' if request.path == '/trivia' }}"
+                href="#!"
+                >Projects</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link {{'selected' if request.path == '/trivia' }}"
+                href="#!"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <a class="btn up" type="button">
+      <span class="material-icons"> keyboard_arrow_up </span>
+    </a>
+
+    <main id="page" class="page">{% block layout %}{% endblock %}</main>
+
+    <footer class="p-0">
+      <div class="base">
+        <div class="container">
+          <div class="row gx-5">
+            <div class="col-xl-4">
+              <img
+                src="{{ url_for('static', filename='images/main-logo.png') }}"
+                class="footer-logo mb-4"
+                alt="Footer logo"
+              />
+              <p class="footer-text">
+                Through strategic partnerships and diversification, we offer
+                comprehensive engineering and procurement services to our
+                clients across the construction sector.
+              </p>
+            </div>
+            <div class="col-xl-3">
+              <p class="footer-caption">Services</p>
+              <div class="col-xl-10 auto mb-2">
+                <a href="">
+                  <div class="image-link">
+                    <img
+                      src="{{ url_for('static', filename='images/1.jpg') }}"
+                      class="w-100"
+                      alt="Service image"
+                    />
+                    <div class="pix-layer">Construction</div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-xl-10 auto mb-2">
+                <a href="">
+                  <div class="image-link">
+                    <img
+                      src="{{ url_for('static', filename='images/2.jpg') }}"
+                      class="w-100"
+                      alt="Service image"
+                    />
+                    <div class="pix-layer">Real Estate Development</div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-xl-10 auto mb-2">
+                <a href="">
+                  <div class="image-link">
+                    <img
+                      src="{{ url_for('static', filename='images/3.jpeg') }}"
+                      class="w-100"
+                      alt="Service image"
+                    />
+                    <div class="pix-layer">Materials Procurement & Supply</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-xl-2">
+              <p class="footer-caption">Navigation</p>
+              <ul class="footer-menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Projects</a></li>
+                <li><a href="">Contact Us</a></li>
+              </ul>
+              <div class="mt-4">
+                <p class="footer-caption">Popular Materials</p>
+                <ul class="footer-menu">
+                  <li><a href="">Fibre Mat</a></li>
+                  <li><a href="">Resin</a></li>
+                  <li><a href="">Acro Props</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-3">
+              <p class="footer-caption">Reach Us</p>
+              <ul class="footer-menu">
+                <li>
+                  <span class="material-icons md-16">phone_iphone</span>
+                  <span class="footer-contact">+234 806 8934 5432</span>
+                </li>
+                <li>
+                  <span class="material-icons md-16">email</span>
+                  <span class="footer-contact">
+                    <script>
+                      var first = "info";
+                      var last = "jacklandengineering.com";
+                      document.write(
+                        '<a href="mailto:' +
+                          first +
+                          "@" +
+                          last +
+                          '" target="_blank" id="footer-email">' +
+                          first +
+                          "@" +
+                          last +
+                          "<\/a>"
+                      );
+                    </script>
+                    <noscript>
+                      Please enable javascript or use the contact form to send a
+                      message.
+                    </noscript>
+                  </span>
+                </li>
+                <li>
+                  <span class="material-icons md-16">location_on</span>
+                  <span class="footer-contact"
+                    >6, Jamgba Jubu Street, Jaguda Estate, Ita-Agbero Close,
+                    Simawa, Obafemi-Owode, Ogun State</span
+                  >
+                </li>
+              </ul>
+
+              <div class="footer-social mt-4">
+                <a
+                  href="https://www.linkedin.com/company/weare2ndact/"
+                  class="social"
+                  target="_blank"
+                >
+                  <div class="ring">
+                    <i class="fa-brands fa-twitter"></i>
+                  </div>
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/weare2ndact/"
+                  class="social"
+                  target="_blank"
+                >
+                  <div class="ring">
+                    <i class="fab fa-linkedin-in"></i>
+                  </div>
+                </a>
+                <a
+                  href="https://www.facebook.com/weare2ndact"
+                  class="social"
+                  target="_blank"
+                >
+                  <div class="ring">
+                    <i class="fab fa-facebook-f"></i>
+                  </div>
+                </a>
+                <a
+                  href="https://www.instagram.com/weare2ndact"
+                  class="social"
+                  target="_blank"
+                >
+                  <div class="ring">
+                    <i class="fa-brands fa-instagram"></i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-base">
+        <p class="mb-0">
+          &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          Jackland Engineering
+        </p>
+        <p class="dev">
+          Developed By
+          <a href="https://lumosstudio.tech/" target="_blank">Lumos Studio</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"
+    ></script>
+
+    <!-- jquery -->
+    <!-- <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script> -->
+
+    <!-- Custom scripts -->
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename = 'js/script.js') }}"
+    ></script>
+
+    {% block script %}{% endblock %}
+  </body>
+</html>

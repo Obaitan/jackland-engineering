@@ -1,0 +1,192 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+  integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+  integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+<section id="partners-s">
+  <div class="row gx-0">
+    <div class="col-xl-3">
+      <div class="partners">our partners</div>
+    </div>
+    <div class="col-xl-9">
+      <div class="partner-logo-div">
+        <div class="my-slider text-center pt-3">
+          <div>
+            <div class="row justify-content-center">
+              <img
+                src="{{ url_for('static', filename='images/clients/6.png') }}"
+                class="w-50"
+                alt="Client logo"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="row justify-content-center">
+              <img
+                src="{{ url_for('static', filename='images/clients/7.jpg') }}"
+                class="w-50"
+                alt="Client logo"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="row justify-content-center">
+              <img
+                src="{{ url_for('static', filename='images/clients/8.png') }}"
+                class="w-50"
+                alt="Client logo"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="row justify-content-center">
+              <img
+                src="{{ url_for('static', filename='images/clients/23.png') }}"
+                class="w-50"
+                alt="Client logo"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="row justify-content-center">
+              <img
+                src="{{ url_for('static', filename='images/clients/24.png') }}"
+                class="w-50"
+                alt="Client logo"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="row justify-content-center">
+              <img
+                src="{{ url_for('static', filename='images/clients/30.png') }}"
+                class="w-50"
+                alt="Client logo"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="row justify-content-center">
+              <img
+                src="{{ url_for('static', filename='images/clients/31.png') }}"
+                class="w-50"
+                alt="Client logo"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="row justify-content-center">
+              <img
+                src="{{ url_for('static', filename='images/clients/38.jpg') }}"
+                class="w-50"
+                alt="Client logo"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="row justify-content-center">
+              <img
+                src="{{ url_for('static', filename='images/clients/44.jpg') }}"
+                class="w-50"
+                alt="Client logo"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="row justify-content-center">
+              <img
+                src="{{ url_for('static', filename='images/clients/45.jpg') }}"
+                class="w-50"
+                alt="Client logo"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="row justify-content-center">
+              <img
+                src="{{ url_for('static', filename='images/clients/46.jpg') }}"
+                class="w-50"
+                alt="Client logo"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="row justify-content-center">
+              <img
+                src="{{ url_for('static', filename='images/clients/49.jpg') }}"
+                class="w-50"
+                alt="Client logo"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="row justify-content-center">
+              <img
+                src="{{ url_for('static', filename='images/clients/50.png') }}"
+                class="w-50"
+                alt="Client logo"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- jQuery -->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+  integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+  integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<script>
+  $(".my-slider").slick({
+    centerMode: true,
+    centerPadding: "75px",
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2400,
+    arrows: false,
+    dots: false,
+    pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ],
+  });
+</script>
