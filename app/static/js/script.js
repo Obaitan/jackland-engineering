@@ -1,3 +1,14 @@
+// Animate menu icon
+function myFunction(x) {
+  x.classList.toggle("change");
+  var e = document.getElementById("nav");
+  if (e.style.width == "110px") {
+    e.style.width = "0px";
+  } else {
+    e.style.width = "110px";
+  }
+}
+
 // Scroll to top script
 document.addEventListener("scroll", handleScroll);
 // get a reference to our predefined button

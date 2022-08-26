@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block layout %}
 <div id="construction-hero">
   <div class="container">
-    <div class="col-xl-6">
+    <div class="col-xl-7">
       <p class="big-cap2">
         Our Services<span class="material-icons mx-2"> arrow_forward_ios </span
         >Construction
@@ -35,10 +35,10 @@
         <div class="col-xl-10 ms-auto">
           <div class="pix-nav d-none d-xl-block">
             <p>Construction</p>
-            <ul>
-              <li>structural works</li>
-              <li>fabrication works</li>
-              <li>polysterene works</li>
+            <ul class="target-links">
+              <li><a href="#structural">structural works</a></li>
+              <li><a href="#fabrication">fabrication works</a></li>
+              <li><a href="#polysterene">polysterene works</a></li>
             </ul>
           </div>
         </div>
@@ -46,9 +46,79 @@
     </div>
   </div>
 </section>
-<section>
-    
+<section id="structural" class="free">
+  <div class="container">
+    <div class="col-xl-9 mx-auto" style="position: relative; z-index: 100">
+      <div class="row gx-0 c-border">        
+        <div class="col-xl-6">
+          <div class="p-center">
+            <p class="narration-cap">
+              Currently making a name for ourselves in the area of construction
+              materials supply and installation, our aim is to grow to become
+              one of the foremost 
+            </p>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <img
+            src="{{ url_for('static', filename='images/ab-test.jpg') }}"
+            class="w-100"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-{% include 'main/_recent.html' %}
-{% endblock %}
+<section id="fabrication" class="free2 mt-5">
+  <div class="container">
+    <div class="col-xl-9 mx-auto" style="position: relative; z-index: 100">
+      <div class="row gx-0 c-border">
+        <div class="col-xl-6">
+          <img
+            src="{{ url_for('static', filename='images/ab-test.jpg') }}"
+            class="w-100"
+            alt=""
+          />
+        </div>
+        <div class="col-xl-6">
+          <div class="p-center">
+            <p class="narration-cap">
+              Currently making a name for ourselves in the area of construction
+              materials supply and installation, our aim is to grow to become
+              one of the foremost 
+            </p>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="polysterene" class="free mt-5">
+  <div class="container">
+    <div class="col-xl-9 mx-auto" style="position: relative; z-index: 100">
+      <div class="row gx-0 c-border">        
+        <div class="col-xl-6">
+          <div class="p-center">
+            <p class="narration-cap">
+              Currently making a name for ourselves in the area of construction
+              materials supply and installation, our aim is to grow to become
+              one of the foremost 
+            </p>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <img
+            src="{{ url_for('static', filename='images/ab-test.jpg') }}"
+            class="w-100"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include 'main/_recent.html' %} {% endblock %}

@@ -1,0 +1,110 @@
+{% extends 'base.html' %} {% block layout %}
+<div id="material-hero">
+  <div class="container">
+    <div class="col-xl-7">
+      <p class="big-cap2">
+        Our Services<span class="material-icons mx-2"> arrow_forward_ios </span
+        >Engineering Materials Procurement & Supplyy
+      </p>
+      <p class="big-cap">
+        Atkins brings together data, technology and people to help create a
+        lived environment that works better for everyone.
+      </p>
+    </div>
+  </div>
+</div>
+
+<section class="p5">
+  <div class="container">
+    <div class="text-center">
+      <ul class="nav nav-tabs switch" role="tablist">
+        <li role="presentation">
+          <a
+            class="active"
+            id="tab-1"
+            data-mdb-toggle="tab"
+            href="#tab-content-1"
+            role="tab"
+            aria-controls="tab-content-1"
+            aria-selected="true"
+            >Engineering components</a
+          >
+        </li>
+        <li class="mx-3">|</li>
+        <li role="presentation">
+          <a
+            class=""
+            id="tab-2"
+            data-mdb-toggle="tab"
+            href="#tab-content-2"
+            role="tab"
+            aria-controls="tab-content-2"
+            aria-selected="false"
+            >Engineering materials</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- Tabs content -->
+    <div class="tab-content mt-4">
+      <div
+        class="tab-pane fade show active"
+        id="tab-content-1"
+        role="tabpanel"
+        aria-labelledby="tab-1"
+      >
+        <div class="row g-4 pt-2">
+          <div class="col-xl-3">
+            <div class="canvas">
+              <a href="{{ url_for('main.component', name='Acro Props') }}">
+                <div class="float">
+                  <img
+                    src="{{ url_for('static', filename='images/about.png') }}"
+                    class="w-100"
+                    alt=""
+                  />
+                  <div class="project-layer2">
+                    <p class="small-cap mb-0" style="font-size: 14px">
+                      sagamu, ogun state
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="tab-pane fade"
+        id="tab-content-2"
+        role="tabpanel"
+        aria-labelledby="tab-2"
+      >
+        <div class="row g-4 pt-2">
+          <div class="col-xl-3">
+            <div class="canvas">
+              <a href="{{ url_for('main.material', name='Fibre Mat') }}">
+                <div class="float">
+                  <img
+                    src="{{ url_for('static', filename='images/about.png') }}"
+                    class="w-100"
+                    alt=""
+                  />
+                  <div class="project-layer2">
+                    <p class="small-cap mb-0" style="font-size: 14px">
+                      sagamu, ogun state
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Tabs content -->
+  </div>
+</section>
+{% endblock %}

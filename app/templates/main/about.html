@@ -1,9 +1,12 @@
 {% extends 'base.html' %} {% block layout %}
 <div id="about-hero" class="text-white">
   <div class="container">
-    <div class="col-xl-6">
-      <p class="big-cap2">who we are</p>
-      <p class="big-cap">
+    <div class="col-xl-7">
+      <p class="big-cap2">
+        about us<span class="material-icons mx-2"> arrow_forward_ios </span
+        >who we are
+      </p>
+      <p class="intro-cap">
         Atkins brings together data, technology and people to help create a
         lived environment that works better for everyone.
       </p>
@@ -12,72 +15,142 @@
 </div>
 <section class="section-1">
   <div class="container">
-    <div class="d-flex align-items-center">
-      <div style="width: 80px"><p class="small-cap">About us</p></div>
-      <div class="w-100 py-0"><hr class="mt-0 mb-2" /></div>
-    </div>
-    <div class="row align-items-center gx-5">
-      <div class="col-xl-6">
-        <p class="text3">
-          As a market-leading design, engineering and project management
-          consultancy we're transforming infrastructure delivery. We are
-          thriving Nigerian construction company that executes projects in the
-          areas of Civil, Water, Structures, and Municipal Engineering.
-        </p>
+    <div class="col-xl-10 mx-auto">
+      <div class="d-flex align-items-center">
+        <div style="width: 85px"><p class="small-cap">About us</p></div>
+        <div class="w-100 py-0"><hr class="mt-0 mb-2" /></div>
       </div>
-      <div class="col-xl-6">
-        <div class="p-2">
-          <img
-            src="{{ url_for('static', filename='images/about.png') }}"
-            class="w-100"
-            alt=""
-          />
+      <div class="row align-items-center gx-5">
+        <div class="col-xl-6">
+          <p class="intro-cap mb-0">
+            As a market-leading design, engineering and project management
+            consultancy we're transforming infrastructure delivery through
+            competent bla bla bla.
+          </p>
+        </div>
+        <div class="col-xl-6">
+          <div class="p-2">
+            <img
+              src="{{ url_for('static', filename='images/about.png') }}"
+              class="w-100"
+              alt=""
+            />
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="row align-items-center gx-5 mt-5">
-      <div class="col-xl-6">
-        <div class="p-2">
-          <img
-            src="{{ url_for('static', filename='images/about.png') }}"
-            class="w-100"
-            alt=""
-          />
+      <div class="row align-items-center gx-5 mt-5">
+        <div class="col-xl-6">
+          <div class="p-2">
+            <img
+              src="{{ url_for('static', filename='images/about.png') }}"
+              class="w-100"
+              alt=""
+            />
+          </div>
         </div>
-      </div>
-      <div class="col-xl-6">
-        <p class="text3">
-          Through partnerships and diversification, we are able to offer
-          comprehensive services to our clients across the construction sector.
-          Currently making a name for ourselves in the area of construction
-          materials supply and installation, our aim is to grow to become one of
-          the foremost engineering construction and supply companies in Nigeria.
-        </p>
+        <div class="col-xl-6">
+          <p class="intro-cap mb-0">
+            As a market-leading design, engineering and project management
+            consultancy we're transforming infrastructure delivery through
+            competent bla bla bla.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="mb-5">
+<section class="mt-4 mb-5">
   <div class="container">
-    <div class="d-flex align-items-center mb-2">
-      <div style="width: 120px"><p class="small-cap">our strengths</p></div>
-      <div class="w-100 py-0"><hr class="mt-0 mb-2" /></div>
-    </div>
-    <div class="row">
-      <div class="col-xl-4">
-        <div class="p-2">
-          <img
-            src="{{ url_for('static', filename='images/about.png') }}"
-            class="w-100"
-            alt=""
-          />
+    <div class="col-xl-10 mx-auto">
+      <div class="d-flex align-items-center mb-2">
+        <div style="width: 130px"><p class="small-cap">our strengths</p></div>
+        <div class="w-100 py-0"><hr class="mt-0 mb-2" /></div>
+      </div>
+      <div class="row g-3 pb-5">
+        <div class="col-xl-4">
+          <div class="rounded canvas">
+            <a href="#">
+              <img
+                src="{{ url_for('static', filename='images/ab-test.jpg') }}"
+                class="w-100"
+                alt=""
+              />
+            </a>
+            <a href="#">
+              <div class="slide-float">
+                <div>people</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-4">
+          <div class="rounded canvas">
+            <a href="#">
+              <img
+                src="{{ url_for('static', filename='images/ab-test.jpg') }}"
+                class="w-100"
+                alt=""
+              />
+            </a>
+            <a href="#">
+              <div class="slide-float">
+                <div>projects</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-4">
+          <div class="rounded canvas">
+            <a href="#">
+              <img
+                src="{{ url_for('static', filename='images/ab-test.jpg') }}"
+                class="w-100"
+                alt=""
+              />
+            </a>
+            <a href="#">
+              <div class="slide-float">
+                <div>partners</div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-{% include 'main/_what.html' %} 
-{% include 'main/_partners.html' %} 
-{% endblock %}
+{% include 'main/_what.html' %}
+<section class="ceo">
+  <div class="container">
+    <div class="col-xl-9 mx-auto">
+      <div class="row align-items-center">
+        <div class="col-xl-4">
+          <img
+            src="{{ url_for('static', filename='images/adebayo.png') }}"
+            class="w-100"
+            alt="Picture of Jackland Engineering's CEO"
+          />
+        </div>
+        <div class="col-xl-1"></div>
+        <div class="col-xl-7">
+          <div class="float">
+            <span class="quote a">“</span>
+            <p class="ceo-quote">
+              Drinking garri is not a sign of poverty, but soaking it in water
+              with the hope that it swells to a greater volume before drinking
+              it, is definitely poverty.
+            </p>
+            <span class="quote b">”</span>
+          </div>
+          <div class="mt-5">
+            <p class="ceo-name mb-0">Engr. Adeola Adefila</p>
+            <p class="ceo-text">CEO, Jackland Engineering</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% include 'main/_partners.html' %} {% endblock %}

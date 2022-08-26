@@ -17,5 +17,35 @@ def about():
 
 @bp.route('/services/construction')
 def construction():
-    title = 'Services > Construction'
+    title = 'Our Services > Construction'
     return render_template('main/construction.html', title=title)
+
+
+@bp.route('/services/real-estate')
+def real_estate():
+    title = 'Our Services > Real Estate'
+    return render_template('main/real-estate.html', title=title)
+
+
+@bp.route('/projects')
+def projects():
+    title = 'Our Projects'
+    return render_template('main/projects.html', title=title)
+
+
+@bp.route('/services/procurement-and-supply')
+def procurement():
+    title = 'Sevices > Procurement & Supply'
+    return render_template('main/procurement.html', title=title)
+
+
+@bp.route('/services/procurement-and-supply/component/<name>')
+def component(name):
+    title = "Procurement & Supply > Engineering Components"
+    return render_template('main/component-single.html', title=title)
+
+
+@bp.route('/services/procurement-and-supply/material/<name>')
+def material(name):
+    title = "Procurement & Supply > Engineering Materials"
+    return render_template('main/material-single.html', title=title)
