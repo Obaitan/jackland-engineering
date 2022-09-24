@@ -1,0 +1,93 @@
+{% extends 'base-dashboard.html' %} {% block body %}
+<div id="dashboard" class="spacing">
+  <div class="container">
+    <div class="row g-4 mt-4 mb-5">
+      <div class="col-xl-8">
+        <div class="table-base">
+          <div class="text-center mb-2">
+            <p class="title">Projects Summary By Year</p>
+          </div>
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+
+      <div class="col-xl-4">
+        <div class="table-base">
+          <div class="text-center mb-3">
+            <p class="title">Quick Summary</p>
+          </div>
+          <div class="d-flex align-items-baseline my-1">
+            <span class="dash-caption">Projects Total</span>
+            {% if project_no > 0 %}
+            <span class="dash-text">{{ project_no }}</span>
+            {% else %}
+            <span class="dash-text">0</span>
+            {% endif %}
+          </div>
+          <div class="d-flex align-items-baseline my-1">
+            <span class="dash-caption">Materials Total</span>
+            {% if material_no > 0 %}
+            <span class="dash-text">{{ material_no }}</span>
+            {% else %}
+            <span class="dash-text">0</span>
+            {% endif %}
+          </div>
+          <div class="d-flex align-items-baseline my-1">
+            <span class="dash-caption">Equipment Total</span>
+            {% if equipment_no > 0 %}
+            <span class="dash-text">{{ equipment_no }}</span>
+            {% else %}
+            <span class="dash-text">0</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block script %}
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.min.js"
+  integrity="sha512-tMabqarPtykgDtdtSqCL3uLVM0gS1ZkUAVhRFu1vSEFgvB73niFQWJuvviDyBGBH22Lcau4rHB5p2K2T0Xvr6Q=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<script>
+  const ctx = document.getElementById("myChart");
+  const myChart = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: ["2018", "2019", "2020", "2021", "2022"],
+      datasets: [
+        {
+          label: "No. of Projects",
+          data: [80, 110, 30, 90, 2],
+          backgroundColor: [
+            "rgba(255, 99, 132, 0.4)",
+            "rgba(54, 162, 235, 0.4)",
+            "rgba(255, 206, 86, 0.4)",
+            "rgba(85, 224, 102, 0.4)",
+            "rgba(153, 102, 255, 0.4)",
+          ],
+          borderColor: [
+            "rgba(255, 99, 132, 1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(85, 224, 102, 1)",
+            "rgba(153, 102, 255, 1)",
+          ],
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+</script>
+{% endblock %}

@@ -3,8 +3,8 @@
   <div class="container">
     <div class="col-xl-7">
       <p class="big-cap2">
-        about us<span class="material-icons mx-2"> arrow_forward_ios </span
-        >who we are
+        about us<span class="material-icons mx-2"> arrow_forward_ios </span>who
+        we are
       </p>
       <p class="intro-cap">
         Atkins brings together data, technology and people to help create a
@@ -71,30 +71,26 @@
       <div class="row g-3 pb-5">
         <div class="col-xl-4">
           <div class="rounded canvas">
-            <a href="#">
-              <img
-                src="{{ url_for('static', filename='images/ab-test.jpg') }}"
-                class="w-100"
-                alt=""
-              />
-            </a>
-            <a href="#">
-              <div class="slide-float">
-                <div>people</div>
-              </div>
-            </a>
+            <img
+              src="{{ url_for('static', filename='images/ab-test.jpg') }}"
+              class="w-100"
+              alt=""
+            />
+            <div class="slide-float">
+              <div>people</div>
+            </div>
           </div>
         </div>
         <div class="col-xl-4">
           <div class="rounded canvas">
-            <a href="#">
+            <a href="{{ url_for('main.projects') }}">
               <img
                 src="{{ url_for('static', filename='images/ab-test.jpg') }}"
                 class="w-100"
                 alt=""
               />
             </a>
-            <a href="#">
+            <a href="{{ url_for('main.projects') }}">
               <div class="slide-float">
                 <div>projects</div>
               </div>
@@ -103,14 +99,14 @@
         </div>
         <div class="col-xl-4">
           <div class="rounded canvas">
-            <a href="#">
+            <a href="#partners-s">
               <img
                 src="{{ url_for('static', filename='images/ab-test.jpg') }}"
                 class="w-100"
                 alt=""
               />
             </a>
-            <a href="#">
+            <a href="#partners-s">
               <div class="slide-float">
                 <div>partners</div>
               </div>

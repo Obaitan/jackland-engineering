@@ -96,11 +96,10 @@
       </div>
     </div>
 
-    <nav class="navbar py-md-3 navbar-expand-xl" id="navbar">
+    <nav class="navbar py-md-3 navbar-expand-xl fixed-top" id="navbar">
       <div class="container">
         <a href="{{ url_for('main.index') }}" class="navbar-brand">
-          <!-- <img src="images/logo.png" class="logo" alt="Company logo" /> -->
-          <span style="font-size: 1.5rem">Jackland</span>
+          <img src="{{ url_for('static', filename='images/svgs/logo.svg') }}" class="logo" alt="Company logo" />          
         </a>
 
         <div
@@ -138,7 +137,7 @@
             <li class="nav-item nav-spacer">
               <a
                 class="nav-link {{'selected' if request.path == '/services/real-estate' }}"
-                href="{{ url_for('main.real_estate') }}"
+                href="#!"
                 >Real Estate</a
               >
             </li>
@@ -314,9 +313,9 @@
       <div class="base">
         <div class="container">
           <div class="row gx-5">
-            <div class="col-xl-4">
+            <div class="col-xl-4 mt-0 mt-xl-5">
               <img
-                src="{{ url_for('static', filename='images/main-logo.png') }}"
+                src="{{ url_for('static', filename='images/svgs/logo-white.svg') }}"
                 class="footer-logo mb-4"
                 alt="Footer logo"
               />
@@ -370,16 +369,21 @@
                 <li><a href="{{ url_for('main.index') }}">Home</a></li>
                 <li><a href="{{ url_for('main.about') }}">About Us</a></li>
                 <li><a href="{{ url_for('main.projects') }}">Projects</a></li>
-                <li><a type="button"
-                data-mdb-toggle="modal"
-                data-mdb-target="#contactModal">Contact Us</a></li>
+                <li>
+                  <a
+                    type="button"
+                    data-mdb-toggle="modal"
+                    data-mdb-target="#contactModal"
+                    >Contact Us</a
+                  >
+                </li>
               </ul>
               <div class="mt-4">
-                <p class="footer-caption">Popular Materials</p>
+                <p class="footer-caption">Popular Materials / Equipment</p>
                 <ul class="footer-menu">
-                  <li><a href="">Fibre Mat</a></li>
-                  <li><a href="">Resin</a></li>
-                  <li><a href="">Acro Props</a></li>
+                  <li><a href="#">Fibre Mat</a></li>
+                  <li><a href="#">Resin</a></li>
+                  <li><a href="#">Acro Props</a></li>
                 </ul>
               </div>
             </div>

@@ -1,0 +1,147 @@
+{% extends 'base-dashboard.html' %} 
+
+{% block style %}
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/file-upload-with-preview/4.3.0/file-upload-with-preview.min.css"
+  rel="stylesheet"
+  media="all"
+/>
+{% endblock %} {% block body %}
+<div id="projects" class="spacing">
+  <div class="container">
+    <div class="col-xl-8 mx-auto mt-5">
+      <div class="table-base">
+        <div class="text-center mb-3">
+          <p class="title mb-0">New Project</p>
+        </div>
+        <div class="px-md-4">
+          <form id="project-form" action="" method="POST" novalidate>
+            {{ form.hidden_tag() }} {% with messages =
+            get_flashed_messages(with_categories=true) %} {% if messages %} {%
+            for category, message in messages %}
+            <div class="alert alert-{{ category }} text-center text-bold mb-0">
+              {{ message }}
+            </div>
+            {% endfor %} {% endif %} {% endwith %}
+            <div class="row g-3 pt-2">
+              <div class="col-md-6">
+                <div>
+                  {{ form.title(id="title",
+                  placeholder="Project Title") }} {% for error in
+                  form.title.errors %}
+                  <span style="color: orangered; font-size: 13px"
+                    >{{ error }}</span
+                  >
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div>
+                  {{ form.client(id="client", placeholder="Client") }} {% for
+                  error in form.client.errors %}
+                  <span style="color: orangered; font-size: 13px"
+                    >{{ error }}</span
+                  >
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="col-12">
+                <div>
+                  {{ form.description(rows=3, id="description", maxlength="250", placeholder="Project Description") }} {% for error in
+                  form.description.errors %}
+                  <span style="color: orangered; font-size: 13px"
+                    >{{ error }}</span
+                  >
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div>
+                  {{ form.location(id="location", placeholder="Location") }} {%
+                  for error in form.location.errors %}
+                  <span style="color: orangered; font-size: 13px"
+                    >{{ error }}</span
+                  >
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="col-md-6 mt-3">
+                <div>
+                  {{ form.budget(id="budget", placeholder="Budget") }} {% for
+                  error in form.budget.errors %}
+                  <span style="color: orangered; font-size: 13px"
+                    >{{ error }}</span
+                  >
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div>
+                  {{ form.start_year(class="date-picker", id="start_year",
+                  placeholder="Start Date") }} {% for error in
+                  form.start_year.errors %}
+                  <span style="color: orangered; font-size: 13px"
+                    >{{ error }}</span
+                  >
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div>
+                  {{ form.duration(id="duration", placeholder="Duration") }} {%
+                  for error in form.duration.errors %}
+                  <span style="color: orangered; font-size: 13px"
+                    >{{ error }}</span
+                  >
+                  {% endfor %}
+                </div>
+              </div>
+
+              <div
+                class="custom-file-container mt-4"
+                data-upload-id="projectPix"
+              >
+                <label
+                  ><span class="title" style="font-size: 1rem;">Upload Project Images</span> 
+                  <a
+                    href="javascript:void(0)"
+                    class="custom-file-container__image-clear"
+                    title="Clear Image"
+                    >x</a
+                  ></label
+                >
+                <label class="custom-file-container__custom-file">
+                  <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                  <input
+                    type="file"
+                    class="custom-file-container__custom-file__custom-file-input"
+                    id="file-input"
+                    accept="*"
+                    multiple
+                  />
+                  <span
+                    class="custom-file-container__custom-file__custom-file-control"
+                  ></span>
+                </label>
+                <div class="custom-file-container__image-preview"></div>
+              </div>
+
+              <div class="col-12 mb-3">
+                {{ form.submit(class="btn btn-jackland btn-lg btn-block") }}
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} 
+
+{% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/file-upload-with-preview/4.3.0/file-upload-with-preview.min.js"></script>
+
+<script>
+  var myUpload = new FileUploadWithPreview("projectPix");
+</script>
+{% endblock %}

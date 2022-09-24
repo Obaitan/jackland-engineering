@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>Jackland Engineering | {{ title }}</title>
+
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/favicon.png') }}"
+      type="image/x-icon"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"
+    />
+
+    {% block style %}{% endblock %}
+
+    <!-- Custom styles -->
+    <link
+      href="{{ url_for('static', filename='css/admin_style.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="dash">
+    <div class="top-nav fixed-top">
+      <div class="col-xl-4">
+        <img
+          src="{{ url_for('static', filename='images/favicon.png') }}"
+          alt="Jackland logo"
+        />
+      </div>
+
+      <!-- Right links -->
+      <div class="col-xl-8 d-none d-md-block">
+        <ul class="ms-auto d-flex justify-content-end mb-0" id="ddm">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span class="material-icons" style="color: #102564">
+                widgets
+              </span>
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li>
+                <a href="{{ url_for('admin.new_project') }}" role="link" class="dropdown-item">Add New Project</a>
+              </li>
+              <li>
+                <a href="{{ url_for('admin.new_material') }}" role="link" class="dropdown-item"
+                  >Add New Material</a
+                >
+              </li>
+              <li>
+                <a href="{{ url_for('admin.new_equipment') }}" role="link" class="dropdown-item"
+                  >Add New Equipment</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sidenav" id="sidenav">
+      <!-- Toggle button -->
+      <div
+        class="group2 navbar-toggler d-block d-lg-none"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#sidebarMenu"
+        aria-controls="sidebarMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        onclick="myFunction(this)"
+      >
+        <div class="bar12"></div>
+        <div class="bar22"></div>
+        <div class="bar32"></div>
+      </div>
+
+      <div id="content-wrap">
+        <div class="text-center">
+          <span class="material-icons md-75">account_circle</span>
+          <p class="f-name">{{ current_user.name }}</p>
+        </div>
+
+        <ul class="menu" id="menu">
+          <li class="side-item">
+            <a
+              href="{{ url_for('admin.dashboard') }}"
+              class="fix {{'actively' if request.path == '/admin/dashboard' }}"
+            >
+              <span class="material-icons"> dashboard </span>
+              <span class="mi">Dashboard</span>
+            </a>
+          </li>
+          <li class="side-item">
+            <a
+              href="{{ url_for('admin.projects') }}"
+              class="fix {{'actively' if request.path == '/admin/projects' }}"
+            >
+              <span class="material-icons"> folder </span>
+              <span class="mi">Projects</span>
+            </a>
+          </li>
+          <li class="side-item">
+            <a
+              href="{{ url_for('admin.materials') }}"
+              class="fix {{'actively' if request.path == '/admin/materials' }}"
+            >
+              <span class="material-icons"> grid_view </span>
+              <span class="mi">Materials</span>
+            </a>
+          </li>
+          <li class="side-item">
+            <a
+              href="{{ url_for('admin.equipment') }}"
+              class="fix {{'actively' if request.path == '/admin/equipment' }}"
+            >
+              <span class="material-icons"> construction </span>
+              <span class="mi">Equipment</span>
+            </a>
+          </li>
+
+          <li class="side-item">
+            <a href="{{ url_for('admin.logout') }}" class="fix">
+              <span class="material-icons"> logout </span>
+              <span class="mi">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <main class="p-0">
+      <div class="main-content px-2 px-md-4">
+        {% block body %}{% endblock %}
+      </div>
+    </main>
+
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"
+    ></script>
+
+    <!-- jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"
+    ></script>
+
+    <!-- Custom scripts -->
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename = 'js/script.js') }}"
+    ></script>
+
+    {% block script %}{% endblock %}
+  </body>
+</html>

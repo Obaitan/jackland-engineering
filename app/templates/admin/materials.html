@@ -1,0 +1,113 @@
+{% extends 'base-dashboard.html' %}
+
+{% block body %}
+<div id="materials" class="spacing">
+  <div class="container">
+    <div class="px-3">
+      <div class="table-base mt-5">
+        <div class="text-center mb-2">
+          <p class="title">Materials</p>
+        </div>
+        <div class="table-responsive">
+          <table class="table text-nowrap table-striped" id="materials_table">
+            <thead style="background-color: #92877a">
+              <tr style="color: #fff">
+                <th scope="col">Name</th>
+                <th scope="col">Thumbnail</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for material in materials %}
+              <tr class="add">
+                <td>{{ material.name }}</td>
+                <td>
+                  <img
+                    src="{{ material.material_image }}"
+                    width="35"
+                    alt="Project thumbnail"
+                  />
+                </td>
+                <td>
+                  <a
+                    href="{{ url_for('admin.edit_material', name='material.name') }}"
+                    class="edit"
+                    role="button"
+                    >Edit</a
+                  >
+                  /
+                  <a
+                    data-mdb-toggle="modal"
+                    type="button"
+                    data-mdb-target="#deleteModal"
+                    class="del"
+                    >Delete</a
+                  >
+                </td>
+
+                <!-- Delete Confirmation Modal -->
+                <div
+                  class="modal fade"
+                  id="deleteModal"
+                  tabindex="-1"
+                  aria-labelledby="formModalLabel2"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body">
+                        <div class="text-center p-3" style="font-size: 18px">
+                          <span class="warning"
+                            >Are you sure you want to delete this project?</span
+                          >?
+                        </div>
+                        <div class="d-flex justify-content-center">
+                          <div class="mx-3 py-3">
+                            <button
+                              type="button"
+                              class="btn btn-success"
+                              data-mdb-dismiss="modal"
+                              aria-label="Close"
+                            >
+                              Cancel
+                            </button>
+                            <a
+                              href="/admin-project/delete/{{ project.title }}"
+                              class="btn btn-danger"
+                              role="button"
+                              >Proceed</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-lg-6 col-xl-4 mt-4">
+          <a
+            class="btn btn-engr btn-lg btn-block fix-in"
+            href="{{ url_for('admin.new_material') }}"
+            role="button"
+          >
+            Add New material
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} 
+
+{% block script %}
+<script>
+  $(document).ready(function () {
+    $("#materials_table").DataTable();
+  });
+</script>
+{% endblock %}

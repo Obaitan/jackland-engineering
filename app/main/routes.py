@@ -39,10 +39,10 @@ def procurement():
     return render_template('main/procurement.html', title=title)
 
 
-@bp.route('/services/procurement-and-supply/component/<name>')
-def component(name):
+@bp.route('/services/procurement-and-supply/equipment/<name>')
+def equipment(name):
     title = "Procurement & Supply > Engineering Components"
-    return render_template('main/component-single.html', title=title)
+    return render_template('main/equipment-single.html', title=title)
 
 
 @bp.route('/services/procurement-and-supply/material/<name>')

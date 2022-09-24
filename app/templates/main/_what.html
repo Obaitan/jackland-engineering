@@ -17,12 +17,14 @@
           <div class="row align-items-end text-white">
             <div class="col-xl-9 text-end">
               <p class="service-cap mb-1">
-                <a href="">Construction Services</a>
+                <a href="{{ url_for('main.construction') }}"
+                  >Construction Services</a
+                >
               </p>
               <hr class="my-1" />
             </div>
             <div class="col-xl-3">
-              <a href="#">
+              <a href="{{ url_for('main.construction') }}">
                 <img
                   src="{{ url_for('static', filename='images/about.png') }}"
                   class="service-thumb"
@@ -35,12 +37,14 @@
           <div class="row align-items-end text-white mt-4">
             <div class="col-xl-9 text-end">
               <p class="service-cap mb-1">
-                <a href="">Real Estate Development</a>
+                <a href="{{ url_for('main.real_estate') }}"
+                  >Real Estate Development</a
+                >
               </p>
               <hr class="my-1" />
             </div>
             <div class="col-xl-3">
-              <a href="#">
+              <a href="{{ url_for('main.real_estate') }}">
                 <img
                   src="{{ url_for('static', filename='images/about.png') }}"
                   class="service-thumb"
@@ -53,12 +57,14 @@
           <div class="row align-items-end text-white mt-4">
             <div class="col-xl-9 text-end">
               <p class="service-cap mb-1">
-                <a href="">Engineering Materials Supply</a>
+                <a href="{{ url_for('main.procurement') }}"
+                  >Engineering Materials Supply</a
+                >
               </p>
               <hr class="my-1" />
             </div>
             <div class="col-xl-3">
-              <a href="#">
+              <a href="{{ url_for('main.procurement') }}">
                 <img
                   src="{{ url_for('static', filename='images/about.png') }}"
                   class="service-thumb"

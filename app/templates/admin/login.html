@@ -36,7 +36,7 @@
 
     <!-- Custom styles -->
     <link
-      href="{{ url_for('static', filename='css/style.css') }}"
+      href="{{ url_for('static', filename='css/admin_style.css') }}"
       rel="stylesheet"
     />
   </head>
@@ -55,7 +55,7 @@
             {{ form.hidden_tag() }} {% with messages =
             get_flashed_messages(with_categories=true) %} {% if messages %} {%
             for category, message in messages %}
-            <div class="alert alert-{{ category }} text-center text-bold mb-3">
+            <div class="alert alert-{{ category }} text-center text-bold mb-4 py-2">
               {{ message }}
             </div>
             {% endfor %} {% endif %} {% endwith %}
