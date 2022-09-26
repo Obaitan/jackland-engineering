@@ -396,7 +396,7 @@ nav, .navbar{
 
 
 #home-hero {
-    height: 80vh;
+    height: 90vh;
     width: 100%;
     background-image: url("../images/home.png");
     /* background-attachment: fixed; */
@@ -572,7 +572,7 @@ height: 56vh;
     overflow-x: hidden;
 }
 
-#about-hero, #construction-hero, #estate-hero, #project-hero, #material-hero, #single-hero{
+#about-hero, #construction-hero, #estate-hero, #project-hero, #material-hero, #single-hero {
     height: 63vh;
   width: 100%;
   background-image: url("../images/other-hero.jpg");

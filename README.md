@@ -1,6 +1,6 @@
 # Engineering Company Website
 
-This is a web application built with Flask (Python Web Development Microframework). It has a connected database with ORM designed models. Work on it is ongoing
+This is a web application built with Flask (Python Web Development Microframework). It has a connected database with ORM designed models. Work on it is currently ongoing.
 
 ## Installation
 
